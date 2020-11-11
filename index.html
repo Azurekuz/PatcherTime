@@ -11,13 +11,19 @@
     </head>
     <body>
         <div class="patcherBlock">
-            <h1 class="patcherTitle">DM Table Patcher</h1>
-            <p class="patcherSubText"><i>Because both the table and the campaign need some fixing after each session...</i></p>
-            <progress class="updateBar" id="minorBar" value="0" max="100"></progress>
-            <a class="barText" id="minorBarText">0%</a>
-            <br>
-            <progress class="updateBar" id="majorBar" value="0" max="100"></progress>
-            <a class="barText" id="majorBarText">0%</a>
+            <div class="patcherHeader">
+                <h1 class="patcherTitle">GM Table Patcher</h1>
+                <p class="patcherSubText"><i>Because every session breaks the table and/or the campaign...</i></p>
+            </div>
+            <div class="patcherBars">
+                <p class="patcherText" id="funText">Fun text!</p>
+                <p class="patcherText" id="patchNumText">Patch 1.0.3 ➛ <b>Patch 1.0.4</b></p>
+                <progress class="updateBar" id="minorBar" value="0" max="100"></progress>
+                <a class="barText" id="minorBarText">0%</a>
+                <br>
+                <progress class="updateBar" id="majorBar" value="0" max="100"></progress>
+                <a class="barText" id="majorBarText">0%</a>
+            </div>
         </div>
         <script src="scripts/PatcherTime.js"></script>
     </body>

@@ -1,25 +1,68 @@
 body{
-
+    background-color: #18271f;
+    display: grid;
+    place-items: center center;
+    height: 95vh;
 }
 
 .patcherBlock{
-    display: block;
-    width: 600px;
-    justify-self: center;
+    width: 32%;
     margin: 0 auto;
+    padding: 7px;
+    box-shadow: 2px 2px 25px 1px #0c0711;
+    overflow: auto;
+}
+
+.patcherHeader{
+    background-color: #415e41;
+    color: #f0f5f0;
+    border: solid rgb(115, 133, 127);
+    border-width: 3px;
+    padding-left: 7px;
+    box-shadow: inset -5px -5px 12px #1a1024;
 }
 
 .patcherTitle{
     margin: 0;
 }
 
+.patcherBars{
+    background-color: darkslategray;
+    padding: inherit;
+    border: solid rgb(115, 133, 127);
+    border-width: 3px;
+    border-top: none;
+    box-shadow: inset 2px 2px 12px #1a1024b2;
+}
+
 .patcherSubText{
     margin: 0;
+    line-height: 1em;
+    margin-bottom: 0.5em;
+    word-wrap: break-word;
+}
+
+@keyframes majorMove {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 25px 25px;
+    }
+}
+
+@keyframes minorMove {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 75px 75px;
+    }
 }
 
 .updateBar{
     border-radius: 5px;
-    width: 550px;
+    width: 89.43%;
     position: relative;
     display: inline-block;
     text-align: center;
@@ -27,30 +70,108 @@ body{
 
 .updateBar::-webkit-progress-bar {
     border-radius: 5px;
+    background:#2a3a2a;
+    box-shadow: inset 2px 3px 5px;
+    animation: minorMove 2s linear infinite;
 }
 
 .updateBar::-webkit-progress-value {
     border-radius: 5px;
-    -webkit-transition : all 0.5s ease;
-    -moz-transition : all 0.5s ease;
-      -o-transition : all 0.5s ease;
-         transition : all 0.5s ease;
+    -webkit-transition : all 0.1s ease;
+    -moz-transition : all 0.1s ease;
+    -o-transition : all 0.1s ease;
+    transition : all 0.1s ease;
+
+    background:#7ccc7c;
+    background-image: linear-gradient(
+    -45deg, 
+    rgba(255, 255, 255, .2) 25%, 
+    transparent 25%, 
+    transparent 50%, 
+    rgba(255, 255, 255, .2) 50%, 
+    rgba(255, 255, 255, .2) 75%, 
+    transparent 75%, 
+    transparent
+    );
+    z-index: 1;
+    background-size: 50px 50px;
+    box-shadow: inset -1px -2px 8px #2f0d4b;
+    overflow: hidden;
+}
+
+.updateBar#minorBar::-webkit-progress-value {
+    box-shadow: inset -1px -2px 5px #2f0d4b;
+}
+
+.updateBar#minorBar::-webkit-progress-bar{
+    animation: minorMove 2s linear infinite;
 }
 
 .updateBar::-moz-progress-bar {
     border-radius: 5px;
+    transition : all 0.5s ease;
+
+    background: #7ccc7c;
+    background-image: linear-gradient(
+    -45deg, 
+    rgba(255, 255, 255, .2) 25%, 
+    transparent 25%, 
+    transparent 50%, 
+    rgba(255, 255, 255, .2) 50%, 
+    rgba(255, 255, 255, .2) 75%, 
+    transparent 75%, 
+    transparent
+    );
+    z-index: 1;
+    background-size: 50px 50px;
+    animation: minorMove 2s linear infinite;
+    overflow: hidden;
 }
 
 .barText{
     position: absolute;
+    padding-left: 3px;
+    color: rgb(187, 201, 194);
 }
-
-
 
 #minorBar{
     height:10px;
 }
 
+#minorBarText{
+    margin:0;
+    margin-top: 12px;
+    line-height: 0%;
+    font-size: 12px;
+    vertical-align: text-bottom;
+}
+
 #majorBar{
     height: 20px;
+    animation: majorMove 2s linear infinite;
+}
+
+#majorBarText{
+    margin:0;
+    margin-top: 14px;
+    line-height: 0%;
+    font-size: 16px;
+}
+
+.patcherText{
+    margin: 0;
+    margin-top:7px;
+    line-height: 7px;
+    font-style: italic;
+    color:rgb(208, 226, 218);
+}
+
+#funText{
+    float: left;
+    line-height: 1em;
+}
+
+#patchNumText{
+    float: right;
+    line-height: 1em;
 }
