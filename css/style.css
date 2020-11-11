@@ -175,3 +175,12 @@ body{
     float: right;
     line-height: 1em;
 }
+
+#gameTitle{
+    margin: 0;
+    line-height: 1em;
+}
+#gameTitle a{
+    vertical-align: super;
+    font-size: 8px;
+}
