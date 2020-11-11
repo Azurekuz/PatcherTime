@@ -1,0 +1,56 @@
+body{
+
+}
+
+.patcherBlock{
+    display: block;
+    width: 600px;
+    justify-self: center;
+    margin: 0 auto;
+}
+
+.patcherTitle{
+    margin: 0;
+}
+
+.patcherSubText{
+    margin: 0;
+}
+
+.updateBar{
+    border-radius: 5px;
+    width: 550px;
+    position: relative;
+    display: inline-block;
+    text-align: center;
+}
+
+.updateBar::-webkit-progress-bar {
+    border-radius: 5px;
+}
+
+.updateBar::-webkit-progress-value {
+    border-radius: 5px;
+    -webkit-transition : all 0.5s ease;
+    -moz-transition : all 0.5s ease;
+      -o-transition : all 0.5s ease;
+         transition : all 0.5s ease;
+}
+
+.updateBar::-moz-progress-bar {
+    border-radius: 5px;
+}
+
+.barText{
+    position: absolute;
+}
+
+
+
+#minorBar{
+    height:10px;
+}
+
+#majorBar{
+    height: 20px;
+}
