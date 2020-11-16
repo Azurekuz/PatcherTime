@@ -215,7 +215,9 @@ class TextLibrary{
             "Worldbuilding...",
             "Desummoning the Elder Gods...",
             "Resummoning the Elder Gods...",
-            "Moving the moons..."
+            "Moving the moons...",
+            "Processing 2020 trauma...",
+            "Asking for potatoes with goats' cheese..."
         ];
         this.curLine;
     }
@@ -292,7 +294,7 @@ class PatcherTime{
     }
 }
 
-var testPatch = new PatcherTime(new Date(2020, 9, 7, 20, 0, 0), new Date(2020, 10, 16, 12, 30, 0), document);
+var testPatch = new PatcherTime(new Date(2020, 9, 7, 20, 0, 0), new Date(2020, 10, 19, 18, 0, 0), document);
 var updateInterval = setInterval(() => {
     testPatch.update();
 },10);
