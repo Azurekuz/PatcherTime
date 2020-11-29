@@ -245,20 +245,26 @@ class DisplayUpdater{
     }
 
     updateBars(percentArray){
-        this.updateMinorBar(percentArray[0], percentArray[2]);
+        this.updateMinorBar(percentArray[0], percentArray[2], percentArray[1]);
         this.updateMajorBar(percentArray[1]);
     }
 
-    updateMinorBar(newValue, changeFunText){
+    updateMinorBar(newValue, changeFunText, majorValue){
         this.document.getElementById(this.minorBarID).value = newValue;
+        this.document.getElementById(this.minorBarID).style.width = newValue+'%';
         this.document.getElementById(this.minorTextID).innerHTML = newValue+"%";
-        if(changeFunText){
+        if(changeFunText && majorValue < 99){
             this.document.getElementById(this.funTextID).innerHTML = this.textLib.generateLine();
+        }else if(changeFunText && majorValue >= 99 && majorValue < 100){
+            this.document.getElementById(this.funTextID).innerHTML = "Finalizing...";  
+        }else if(majorValue>=100){
+            this.document.getElementById(this.funTextID).innerHTML = "Done!"  
         }
     }
 
     updateMajorBar(newValue){
         this.document.getElementById(this.majorBarID).value = newValue;
+        this.document.getElementById(this.majorBarID).style.width = newValue+'%';
         this.document.getElementById(this.majorTextID).innerHTML = newValue+"%";
     }
 
@@ -294,7 +300,8 @@ class PatcherTime{
     }
 }
 
-var testPatch = new PatcherTime(new Date(2020, 9, 7, 20, 0, 0), new Date(2020, 10, 19, 18, 0, 0), document);
+//var testPatch = new PatcherTime(new Date(2020, 9, 7, 20, 0, 0), new Date(2020, 10, 19, 18, 0, 0), document);
+var testPatch = new PatcherTime(new Date(2020, 10, 28, 23, 59, 59), new Date(2020, 10, 29, 23, 59, 59), document);
 var updateInterval = setInterval(() => {
     testPatch.update();
 },10);
