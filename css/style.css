@@ -152,7 +152,6 @@ body{
 #funText{
     float: left;
     line-height: 1em;
-    margin-bottom: 2px;
 }
 
 #patchNumText{
