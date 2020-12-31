@@ -216,8 +216,11 @@ class TextLibrary{
             "Desummoning the Elder Gods...",
             "Resummoning the Elder Gods...",
             "Moving the moons...",
-            "Processing 2020 trauma...",
-            "Asking for potatoes with goats' cheese..."
+            "Celebrating the new year...",
+            "Asking for potatoes with goats' cheese...",
+            "Making it snow ash...",
+            "Prettying up forests and riverlands...",
+            "Hoo... Hoo... Hoo..."
         ];
         this.curLine;
     }
@@ -301,7 +304,7 @@ class PatcherTime{
 }
 
 //var testPatch = new PatcherTime(new Date(2020, 9, 7, 20, 0, 0), new Date(2020, 10, 19, 18, 0, 0), document);
-var testPatch = new PatcherTime(new Date(2020, 10, 29, 10, 59, 9), new Date(2020, 11, 30, 15, 0, 0), document);
+var testPatch = new PatcherTime(new Date(2020, 11, 30, 15, 0, 0), new Date(2021, 0, 6, 15, 0, 0), document);
 var updateInterval = setInterval(() => {
     testPatch.update();
 },10);
