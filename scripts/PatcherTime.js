@@ -220,7 +220,11 @@ class TextLibrary{
             "Asking for potatoes with goats' cheese...",
             "Making it snow ash...",
             "Prettying up forests and riverlands...",
-            "Hoo... Hoo... Hoo..."
+            "Hoo... Hoo... Hoo...",
+            "Observing the weave of the world...",
+            "Recuperating from wounds and trauma...",
+            "Taking a few drinks...",
+            "Accidently burning some trees..."
         ];
         this.curLine;
     }
@@ -304,7 +308,7 @@ class PatcherTime{
 }
 
 //var testPatch = new PatcherTime(new Date(2020, 9, 7, 20, 0, 0), new Date(2020, 10, 19, 18, 0, 0), document);
-var testPatch = new PatcherTime(new Date(2021, 0, 7, 15, 0, 0), new Date(2021, 0, 13, 17, 0, 0), document);
+var testPatch = new PatcherTime(new Date(2021, 0, 17, 16, 0, 0), new Date(2021, 0, 24, 17, 0, 0), document);
 var updateInterval = setInterval(() => {
     testPatch.update();
 },10);
