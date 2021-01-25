@@ -278,11 +278,54 @@ class DisplayUpdater{
     updateFunText(){
 
     }
+
+    revealPatch(patchIndex, patchInfoID){
+        var initialState = this.document.getElementById(patchInfoID).style.display;
+        console.log(initialState)
+        if(initialState == "none" || initialState == ""){
+            this.document.getElementById(patchInfoID).style.display = "inherit";
+            this.document.getElementById(patchInfoID).style.height = "auto";
+            this.document.getElementsByClassName("patchHead")[patchIndex].innerHTML = "<a href='#' onclick='testPatch.reveal("+patchIndex+")'>"+patchInfoID+"</a>&nbsp;<i class='arrow down'>"
+        }else{
+            this.document.getElementById(patchInfoID).style.display = "none";
+            this.document.getElementById(patchInfoID).style.height = "0%";
+            this.document.getElementsByClassName("patchHead")[patchIndex].innerHTML = "<a href='#' onclick='testPatch.reveal("+patchIndex+")'>"+patchInfoID+"</a>&nbsp;<i class='arrow right'>"
+        }
+        console.log();
+    }
+
+    toggleHistoryOverlay(){
+        var initialState = this.document.getElementsByClassName("patchHistoryOverlay")[0].style.display;
+        console.log(this.document.getElementsByClassName("patchHistoryOverlay")[0])
+        if(initialState == "none" || initialState == ""){
+            this.document.getElementsByClassName("patchHistoryOverlay")[0].style.display = "block";
+            this.document.getElementsByClassName("patchHistoryWindow")[0].style.display = "block";
+        }else{
+            this.document.getElementsByClassName("patchHistoryOverlay")[0].style.display = "none";
+            this.document.getElementsByClassName("patchHistoryWindow")[0].style.display = "none";
+        }
+    }
+}
+
+class PatchHistory{
+    constructor(){
+        this.patches = ["1.0.0", "1.0.1", "1.0.2", "1.0.3", "1.0.4", "1.0.5", 
+        "1.0.6", "1.0.7"];
+    }
+
+    reveal(id){
+        if(id >= 0 && id < this.patches.length){
+            return this.patches[id];
+        }else{
+            throw "Invalid patch requested!";
+        }
+    }
 }
 
 class PatcherTime{
     constructor(startDT, endDT, document){
         this.patcher = new Patcher(startDT, endDT);
+        this.history = new PatchHistory();
         this.displayView = new DisplayUpdater(document, "minorBar", "majorBar","funText");
     }
 
@@ -305,10 +348,18 @@ class PatcherTime{
     getMajorTotal(){
         return this.majorTime.getTotal();
     }
+
+    reveal(id){
+        this.displayView.revealPatch(id, this.history.reveal(id));
+    }
+
+    toggleHistory(){
+        this.displayView.toggleHistoryOverlay();
+    }
 }
 
 //var testPatch = new PatcherTime(new Date(2020, 9, 7, 20, 0, 0), new Date(2020, 10, 19, 18, 0, 0), document);
-var testPatch = new PatcherTime(new Date(2021, 0, 17, 16, 0, 0), new Date(2021, 0, 24, 17, 0, 0), document);
+var testPatch = new PatcherTime(new Date(2021, 0, 17, 16, 0, 0), new Date(2021, 0, 31, 17, 0, 0), document);
 var updateInterval = setInterval(() => {
     testPatch.update();
 },10);
