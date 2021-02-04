@@ -221,11 +221,16 @@ body p, body a, body ul li {
     text-align: left;
     z-index: 4;
     max-height: 20em;
-    /*overflow-y: scroll;*/
+    overflow-y: scroll;
 }
 
 .historyContent h2, .historyContent p{
     margin: 0px;
+}
+
+li > .patchHead:hover{
+    color: #e0afff;
+    transition: all 0.1s;
 }
 
 .historyContent ul{
@@ -246,6 +251,9 @@ body p, body a, body ul li {
 
 .patchInfo{
     padding-bottom: 5px;
+    background-color: rgb(48, 29, 59);
+    padding: 4px;
+    border-radius: 5px;
 }
 
 .patchInfo ul{
@@ -253,6 +261,10 @@ body p, body a, body ul li {
     padding: 0px;
     padding-top: 5px;
     padding-left: 25px;
+}
+
+.patchInfo .date-label{
+    color: #797385;
 }
 
 .arrow{
