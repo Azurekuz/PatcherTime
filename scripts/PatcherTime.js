@@ -226,7 +226,7 @@ class TextLibrary{
             "Observing the weave of the world...",
             "Recuperating from wounds and trauma...",
             "Taking a few drinks...",
-            "Accidently burning some trees..."
+            "Accidentally burning some trees..."
         ];
         this.curLine;
     }
