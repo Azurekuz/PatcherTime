@@ -202,6 +202,8 @@ class TextLibrary{
             "Screaming...",
             "Naming things...",
             "Naming nations and places...",
+            "Naming NPCs 'Gabe'...",
+            "Stowing away shinies for you to not steal...",
             "Describing things...",
             "Reinforcing world frames with steel...",
             "Finding out what my NPCs are up to...",
