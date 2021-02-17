@@ -319,6 +319,14 @@ li > .patchHead:hover{
     font-size: 8px;
 }
 
+.banner_NewPatch{
+    display: inline-block;
+    background-color: rgb(218, 141, 42);
+    padding:1px;
+    border-radius: 10px;
+    font-size: 12px;
+}
+
 @media only screen and (max-width: 600px) {
     .patcherBlock{
         width: 20em;

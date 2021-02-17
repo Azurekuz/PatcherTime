@@ -310,7 +310,7 @@ class DisplayUpdater{
 class PatchHistory{
     constructor(){
         this.patches = ["1.0.0", "1.0.1", "1.0.2", "1.0.3", "1.0.4", "1.0.5", 
-        "1.0.6", "1.0.7"];
+        "1.0.6", "1.0.7", "1.?.?"];
     }
 
     reveal(id){
@@ -359,7 +359,7 @@ class PatcherTime{
 }
 
 //var testPatch = new PatcherTime(new Date(2020, 9, 7, 20, 0, 0), new Date(2020, 10, 19, 18, 0, 0), document);
-var testPatch = new PatcherTime(new Date(2021, 0, 17, 16, 0, 0), new Date(2021, 1, 7, 19, 30, 0), document);
+var testPatch = new PatcherTime(new Date(2021, 1, 7, 21, 0, 0), new Date(2021, 1, 21, 17, 0, 0), document);
 var updateInterval = setInterval(() => {
     testPatch.update();
 },10);
