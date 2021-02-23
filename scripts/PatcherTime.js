@@ -361,7 +361,7 @@ class PatcherTime{
 }
 
 //var testPatch = new PatcherTime(new Date(2020, 9, 7, 20, 0, 0), new Date(2020, 10, 19, 18, 0, 0), document);
-var testPatch = new PatcherTime(new Date(2021, 1, 7, 21, 0, 0), new Date(2021, 1, 21, 17, 0, 0), document);
+var testPatch = new PatcherTime(new Date(2021, 1, 7, 21, 0, 0), new Date(2021, 1, 25, 17, 0, 0), document);
 var updateInterval = setInterval(() => {
     testPatch.update();
 },10);
