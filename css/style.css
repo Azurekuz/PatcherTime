@@ -333,7 +333,6 @@ li > .patchHead:hover{
     .updateBarBG{
         display: inline-block;
         width: 16em;
-        border-radius: 5px;
         background-color: #250e26;
         position: relative;
         z-index: 0;
