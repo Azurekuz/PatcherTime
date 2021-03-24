@@ -111,7 +111,7 @@ body p, body a, body ul li {
 .updateBar#minorBar{
     margin-bottom: 6px;
     height:11px;
-    animation: barMove 2s linear infinite;
+    animation: barMove 1s linear infinite;
 }
 
 .barText{
@@ -135,7 +135,7 @@ body p, body a, body ul li {
 
 #majorBar{
     height: 20px;
-    animation: barMove 2s linear infinite;
+    animation: barMove 3s linear infinite;
 }
 
 .updateBarBG#majorBarBG{
